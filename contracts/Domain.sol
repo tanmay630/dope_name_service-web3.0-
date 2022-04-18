@@ -80,7 +80,7 @@ function register(string calldata name) public payable {
           abi.encodePacked(
             '{"name": "',
             _name,
-            '", "description": "A domain on the Ninja name service", "image": "data:image/svg+xml;base64,',
+            '", "description": "A domain on the Dope name service", "image": "data:image/svg+xml;base64,',
             Base64.encode(bytes(finalSvg)),
             '","length":"',
             strLen,
@@ -102,6 +102,7 @@ function register(string calldata name) public payable {
 
 
       domains[name] = msg.sender;
+       names[newRecordId] = name;
        _tokenIds.increment();
 
 }

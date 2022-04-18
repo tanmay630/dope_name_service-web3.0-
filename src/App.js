@@ -1,15 +1,20 @@
 import React,{useState, useEffect} from 'react'
 import './App.css';
-
+import 'remixicon/fonts/remixicon.css'
 import polygonLogo from './assets/matic-logo.png';
+import TwitterLogo from './assets/twitter-app.png';
+import InstaLogo from './assets/ig-instagram.png';
+import LinkedinLogo from './assets/linkedin-app.png';
 import ethLogo from './assets/eth-logo.png';
 import {ethers} from "ethers";
 import contractAbi from './utils/contractABI.json';
 import { networks } from './utils/netwroks';
 const tld = '.dope';
-const CONTRACT_ADDRESS = '0x54BA1B50cd1B63fa89994e430C427527f66Ae82F';
+const CONTRACT_ADDRESS = '0xd11d553266221236b56Cb22ea870E038F930030B';
 const TWITTER_HANDLE = "TanmaySinghKush";
 const TWITTER_LINK =  `https://twitter.com/${TWITTER_HANDLE}`;
+const LinkedIn_Link = `https://www.linkedin.com/in/tanmay-singh-760962128/`;
+const Insta_Link = 'https://www.instagram.com/tanmay888/'
 
 const App = () => {
 
@@ -75,15 +80,21 @@ const App = () => {
   }
 
 
-  const renderNotConnectedContainer = () => (
-		<div className="connect-wallet-container">
-			<img src="https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif" alt="Ninja donut gif" />
-      {/* Call the connectWallet function we just wrote when the button is clicked */}
-			<button onClick={connectWallet} className="cta-button connect-wallet-button">
-				Connect Wallet
-			</button>
-		</div>
-	);
+
+
+  const renderNotConnectedContainer = () =>  {
+   
+    if(currentAccount){
+      return <div className="right">
+         {currentAccount ? <img alt="Network logo" className="logo" src={ network.includes("Polygon") ? polygonLogo : ethLogo} />: null }
+   
+         {currentAccount ? <p> Wallet: {currentAccount.slice(0, 6)}...{currentAccount.slice(-4)} </p> :  null}
+      </div>
+    }else{
+       return <button className='connect-wallet-button' onClick={connectWallet}>Connect Wallet</button>
+    }
+
+  };
 
   const switchNetwork = async () => {
     if (window.ethereum) {
@@ -158,62 +169,74 @@ const App = () => {
       console.log(error);
     }
   }
+
+
+  useEffect(() => {
+    if (network === 'Polygon Mumbai Testnet') {
+      fetchMints();
+    }
+  }, [currentAccount, network]);
+
   
 
   const renderInputForm = () =>{
-
-    if (network !== 'Polygon Mumbai Testnet') {
-      return (
-        <div className="connect-wallet-container">
-          <p>please connect to the polygon mumbai testnet</p>
-          <button className='cta-button mint-button' onClick={switchNetwork}>Click here to switch</button>
- 
-        </div>
-      );
-    }
- 
+    
+    if(network !== 'Polygon Mumbai Testnet') {
      return (
-       <div className="form-container">
-         <div className="first-row">
-           <input
-             type="text"
-             value={domain}
-             placeholder='domain'
-             onChange={e => setDomain(e.target.value)}
-           />
-           <p className='tld'> {tld} </p>
-         </div>
- 
-         <input
-           type="text"
-           value={record}
-           placeholder='you are dope'
-           onChange={e => setRecord(e.target.value)}
-         />
- 
-         {editing ? (
-         <div className="button-container">
-           <button className="cta-button mint-button" disabled={null} onClick={updateDomain}>
-             Set record
-           </button>
-           <button className="cta-button mint-button" onClick={()=> 
-            {setEditing(false)}}>
-             Cancel
-           </button>
-       </div>
-       ) : (
-         
-         <button className='cta-button mint-button' disabled={null} onClick={mintDomain}>
+      <div className="connect-wallet-container">
+        <p className='connect-text'>Please connect to the Polygon mumbai testnet</p>
+        <button className='switch-button' onClick={switchNetwork}>Click here to switch</button>
+      </div>
+      )
+    }
+
+    return (
+    
+      <div className="form-container">
+
+      <p id='mint-domain-text'>Mint your Domain here 👇</p>
+      <div className="first-row">   
+        <input
+          type="text"
+          value={domain}
+          placeholder='domain'
+          onChange={e => setDomain(e.target.value)}
+        />
+        <p className='tld'> {tld} </p>
+      </div>
+
+      <input
+        type="text"
+        value={record}
+        placeholder='you are dope'
+        onChange={e => setRecord(e.target.value)}
+      />
+
+      {editing ? (
+      <div className="button-container">
+        <button className="cta-button mint-button" disabled={null} onClick={updateDomain}>
+          Set record
+        </button>
+        <button className="cta-button mint-button" onClick={()=> 
+         {setEditing(false)}}>
+          Cancel
+        </button>
+    </div>
+    ) : (
+
+      <div>
+        {loading ?  <div className='loader-wrapper'> <div className='loader'><div className='loader loader-inner'></div></div></div> :   <button className='mint-button' disabled={null} onClick={mintDomain}>
                Mint
-             </button>  
- 
-     )}
-   
-       </div>
- );
- 
- }  
- 
+             </button> }
+      </div>
+
+    )}
+  
+    </div>
+
+    );
+  }
+
 
 
   useEffect(() => {
@@ -270,7 +293,7 @@ const App = () => {
                       null
                     }
                   </div>
-            <p> {mint.record} </p>
+            <p className='record'> {mint.record} </p>
           </div>)
           })}
         </div>
@@ -339,42 +362,35 @@ const App = () => {
 
 
   return (
-    <div className="App">
-      <div className="container">
+    <div className="container">
+         <nav className='nav-container'>
+           <p className='logo-text'><span>Dope</span>Domains</p>
+            {renderNotConnectedContainer()}
+         </nav>
+       <main className='main-content'>
 
-      <div className="header-container">
-        <header>
-          <div className="left">
-            <p className="title">dope Name Service</p>
-            <p className="subtitle">Your immortal API on the blockchain!</p>
-          </div>
-           
-  <div className="right">
-    <img alt="Network logo" className="logo" src={ network.includes("Polygon") ? polygonLogo : ethLogo} />
-    { currentAccount ? <p> Wallet: {currentAccount.slice(0, 6)}...{currentAccount.slice(-4)} </p> : <p> Not 
-    connected </p> }
-  </div>        
-        </header>
-      </div>
-
-      {!currentAccount && renderNotConnectedContainer()}
-         
-       <div className='form-container'>
+        <div className='main-content-container bg-blur'>
+            
          {currentAccount && renderInputForm()}
-       </div>
-         {mints && renderMints()}
-         {loading ?  <div class="loader"></div> : <p></p>}     
-         <div className="footer-container">
-        <img alt="Twitter Logo" className="twitter-logo" src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-superJumbo-v4.jpg " />
-        <a
-          className="footer-text"
-          href={TWITTER_LINK}
-          target="_blank"
-          rel="noreferrer"
-        >{`built by @${TWITTER_HANDLE}`}</a>
-      </div>
+
+       </div>  
+        
+        <div>
+          {mints && renderMints()}
+        </div>
+
+       </main>
+          
+        <div className='icons-wrapper'>
+        
+            <a className='footer-content1' href={TWITTER_LINK}><i className='ri-instagram-line icon'></i></a> 
+            <a  className='footer-content2'
+                    href={Insta_Link}><i className='ri-facebook-circle-line icon'></i></a>  
+            <a className='footer-content3' href={LinkedIn_Link}><i className='ri-linkedin-box-line icon'></i></a>     
+  
+        </div>   
+        
     </div>
-  </div>
 );
 }
 

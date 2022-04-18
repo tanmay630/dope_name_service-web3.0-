@@ -6,211 +6,13 @@
    margin:0;
  }
  
- .container {
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-evenly;
-   
-   
- }
  
- .header-container {
-   padding-top: 30px;
- }
- 
- header{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   padding: 10px 10px 10px 10px;
- }
- 
- .title {
-   margin: 0;
-   font-size: 35px;
-   font-weight: bold;
-   color: white;
- }
- 
- .subtitle {
-   font-size: 25px;
-   color: white;
- }
- 
- .left{
-   text-align: left;
-   margin-left: 10%;
- }
- 
- .logo{
-   width: 20px;
-   height: 20px;
-   margin-right: 10px;
- }
- 
- .right{
-   display: flex;
-   background: black;
-   border-radius: 16px;
-   padding: 12px 20px;
-   height: 99%;
-   margin-right: 10%;
-   margin-top: 10px;
- }
- 
- .content-container {
-   background-color: #a200d6;
- }
- 
- .cta-button {
-   height: 45px;
-   border: 0;
-   width: auto;
-   padding-left: 40px;
-   padding-right: 40px;
-   border-radius: 10px;
-   cursor: pointer;
-   font-size: 16px;
-   font-weight: bold;
-   color: white;
- }
- 
- .connect-wallet-container {
-   display: flex;
-   flex-direction: column;
-   margin: auto;
-   max-width: 550px;
- }
- 
- .connect-wallet-container img {
-   padding-bottom: 20px;
- }
- 
- .connect-wallet-button {
-   background-image: linear-gradient(
-     to right,
-     #ff8177 0%,
-     #ff867a 0%,
-     #ff8c7f 21%,
-     #f99185 52%,
-     #cf556c 78%,
-     #b12a5b 100%
-   );
-   background-size: 200% 200%;
-   animation: gradient-animation 4s ease infinite;
- }
- 
- .mint-button {
-   background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
-   font-size: 18px;
-   background-size: 200% 200%;
-   animation: gradient-animation 4s ease infinite;
-   margin: 20px 10px;
-   border-radius: 20px;
-   padding: 0px 2rem;
- }
- 
- .mint-button:disabled{
-   background: #550072;
-   color: rgb(209, 209, 209);
-   cursor: not-allowed;
- }
- 
- .mint-row{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
- }
- 
- .edit-button{
-   border-radius: 50%;
-   cursor: pointer;
-   margin-left: 3px;
-   top: 20px;
-   border: 0px;
-   font-size: 12px;
-   background-color: transparent;
- }
- 
- .edit-icon{
-   width: 12px;
- }
- 
- 
- .footer-container {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding-bottom: 30px;
- }
- 
- .twitter-logo {
-   width: 35px;
-   height: 35px;
- }
- 
- .footer-text {
-   color: white;
-   font-size: 16px;
-   font-weight: bold;
- }
- 
- .form-container{
-   display: flex;
-   width: 100%;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- 
- }
- 
- input{
-   border: 0;
-   border-radius: 12px;
-   background-color: black;
-   color: white;
-   letter-spacing: 1px;
-   font-size: 26px;
-   width: 400px;
-   margin-bottom: 10px;
-   padding: 10px 20px;
-   text-align: center;
- }
- 
- input::placeholder {
-   color: gray;
-   letter-spacing: 2px;
- }
- 
- input:focus {
-   outline: none;
- }
- 
- .first-row{
-   position: relative;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   margin-bottom: 10px;
- 
- }
- 
-
-  .twit {
-    text-align: center;
-    margin-top: 25px;
-    color: #f3f3f3;
-  }
-
-
 
  .tld {
    position: absolute;
    font-size: 20px;
    font-weight: bold;
-   color: white;
+   color: #c4fab7;
    /* left: -70px; */
    right: 22px;
    margin: 0;  
@@ -218,120 +20,490 @@
    margin-bottom: 13px;
  }
  
- .mint-list {
+
+
+span{
+  color: #c4fab7;
+
+}
+
+.logo-text {
+  color: #f3f3f3;
+  text-align: center;
+  text-shadow: 2px 2px green
+  
+}
+
+
+.logo-text{
+  font-size: 1.5vw;
+}
+
+ .container {
+ 
+  height: 100vh;
+ }
+ 
+ .nav-container {
+  
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0px 80px;
+  
+  
+ }
+
+
+
+ .main-content {
+
+   height: 70%;
+   
    display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
    justify-content: center;
    align-items: center;
-   margin-top: 20px;
- }
- 
- .mint-item {
-   display: flex;
    flex-direction: column;
-   justify-content: space-between;
+   margin: 30px;
+ }
+
+
+ .icons-wrapper {
+   position: relative;
+ }
+
+ .icons-wrapper {
+
+   display: flex;
+   justify-content: center;
    align-items: center;
-   padding: 10px 15px;
-   border-radius: 5px;
-   margin: 10px 15px;
-   font-size: 18px;
-   background-color: #c4b7fa;
-   color: black;
-   min-width: 150px;
-   max-width: fit-content;
-   box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.2);
- }
- 
- /* Different background-colour for every nth mint-item */
- .mint-item:nth-child(2n) {
-   background-color: lightblue;
- }
- 
- .mint-item:nth-child(3n) {
-   background-color: lightpink;
- }
- 
- .mint-item:nth-child(5n) {
-   background-color: lightgreen;
- }
- 
- .link{
-   color: black;
-   text-decoration: none;
- }
- 
- .underlined{
-   text-decoration: underline;
- }
- 
- .underlined:hover{
-   cursor: pointer;
- }
- 
- /* KeyFrames */
- @-webkit-keyframes gradient-animation {
-   0% {
-     background-position: 0% 50%;
-   }
-   50% {
-     background-position: 100% 50%;
-   }
-   100% {
-     background-position: 0% 50%;
-   }
- }
- @-moz-keyframes gradient-animation {
-   0% {
-     background-position: 0% 50%;
-   }
-   50% {
-     background-position: 100% 50%;
-   }
-   100% {
-     background-position: 0% 50%;
-   }
- }
- @keyframes gradient-animation {
-   0% {
-     background-position: 0% 50%;
-   }
-   50% {
-     background-position: 100% 50%;
-   }
-   100% {
-     background-position: 0% 50%;
-   }
- }
- 
- .form-container {
-
-   margin: 150px;
-   margin-left: 480px;
-  width: 500px;
+   gap: 52px;
+   
+   margin: 60px;
+   
 
  }
 
+ .icon{
+  display: inline-block; /*Makes the icons inline block level elements. This will let us animate the transform property.*/ 
+  font-size: 44px;
+  animation: float 3s ease-in-out infinite; /*Applies the float keyframe animation over 5s and makes it run infinitely.*/
+}
+
+/*
+  The following styles will add linear gradient background to the text then it will clip the text shape into the background.
+  The result is gradient text.
+*/
+.ri-instagram-line{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* This is the first item so no animation delay needed.*/
+}
+
+.ri-facebook-circle-line{
+  color: #1877f2;
+  animation-delay: 1s; /* Adds a animation delay of 1 seconds.*/
+}
+
+.ri-linkedin-box-line{
+  color: #2825d3;
+  animation-delay: 2s; /* Adds a animation delay of 2 seconds.*/
+}
+
+@keyframes float {
+  0%{
+      transform: translateY(0); /*The starting point of the animation is 0.*/
+  }
+  50%{
+      transform: translateY(-15px); /*The middle point of the animation is -15xp. This will move the element up.*/
+  }
+  100%{
+      transform: translateY(0); /*The last point of the animation is going back to the starting state of 0.*/
+  }
+}
 
 
- .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  animation: spin 2s linear infinite;
-  margin: 15px;
+
+
+
+.main-content-container {
+
+
+
+  margin-top: 50px;
+  padding: 1rem;
+  height: 800px;
+  width: 700px;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+}
+
+.bg-blur {
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.bg-blur::before {
+  content: '';
+  background-image: url("https://freellustrustrations.s3.us-east-2.amazonaws.com/free-images/thumbimg_25361957thumbejpg.jpg0px");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  filter: blur(30px);
   z-index: -1;
-  margin-left: 50px;
-  margin-top: -150px;
-    
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+
+
+.connect-wallet-container {
+   
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+  
 }
+
+
+.connect-text {
+  font-family: sans-serif;
+  font-size: 20px ;
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+}
+
+
+.connect-wallet-button {
+
+  height: 50px;
+  width: 150px;
+  border: 2px solid palevioletred;
+  border-radius: 12px;
+  background: transparent;
+  color: #eef7f2;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+
+.switch-button {
+
+  height: 50px;
+  width: 150px;
+  border: 2px solid palevioletred;
+  border-radius: 12px;
+  background: #c4fab7;;
+  color: #000000;
+  font-weight: bold;
+  margin: 0px 145px;
+  cursor: pointer;
+  
+
+}
+
+
+.form-container{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 50px;
+  gap: 20px;
+
+}
+
+input{
+  border: 2px solid palevioletred;
+  border-radius: 12px;
+  background-color: transparent;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 26px;
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+input::placeholder {
+  color: rgb(143, 137, 137);
+  letter-spacing: 2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.first-row{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+}
+
+
+.mint-button {
+
+  width: 180px;
+  height: 50px;
+  background-color: #c4fab7;
+  border-radius: 12px;
+  border: 3px solid palevioletred;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 30px;
+  
+}
+
+#mint-domain-text{
+
+  font-size: larger;
+  
+}
+
+.logo {
+  width: 25px;
+  height: 25px;
+ 
+
+}
+
+
+
+.right{
+  display: flex;
+  background: transparent;
+  border-radius: 16px;
+  padding: 12px 20px;
+  height: 30px;
+  margin-right: 10%;
+  margin-top: 10px;
+  color: #c4fab7;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: 2px solid palevioletred;
+
+}
+
+.mint-container {
+ 
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+.subtitle {
+  font-size: 25px;
+  color: white;
+
+}
+
+
+.mint-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 10px 15px;
+  font-size: 18px;
+  background-color: #c4b7fa;
+  color: black;
+  min-width: 150px;
+  max-width: fit-content;
+  box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.2);
+}
+
+
+.mint-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.mint-item:nth-child(2n) {
+  background-color: lightblue;
+}
+
+.mint-item:nth-child(3n) {
+  background-color: lightpink;
+}
+
+.mint-item:nth-child(5n) {
+  background-color: lightgreen;
+}
+
+.link{
+  color: black;
+  text-decoration: none;
+}
+
+.underlined{
+  text-decoration: underline;
+  color:  violet;
+}
+
+.underlined:hover{
+  cursor: pointer;
+}
+
+
+.mint-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.edit-button{
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 3px;
+  top: 20px;
+  border: 0px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.edit-icon{
+  width: 12px;
+}
+
+
+
+
+
+
+.loader-wrapper {
+  width: 60px;
+  height: 60px;
+}
+
+.loader {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #162534;
+  border-top-color: #4bc8eb;
+  border-bottom-color: #f13a8f;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+}
+
+.loader-inner {
+
+  border-top-color: #36f372;
+  border-bottom-color: #fff;
+  animation-duration: 2.5s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(360deg);
+
+  } 50% {
+    transform: scale(.8) rotate(-360deg);
+  } 100% {
+
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+
+
+@media (max-width: 650px) {
+ 
+   .nav-container {
+     margin: 0 23px;
+   }
+  .logo-text {
+    font-size: 20px;
+  }
+  
+  .connect-text {
+
+    font-family: sans-serif;
+    font-size: 11px ;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    
+  }
+
+  .connect-wallet-button {
+    margin-left: 15px;
+    font-size: small;
+    
+  }
+
+ .main-content-container {
+   width: 328px;
+   padding: 15px;
+ }
+
+ input {
+   width: 280px;
+   height: 18px;
+ }
+ .mint-button {
+   height: 42px;
+   margin-bottom: 82px;
+ }
+
+ .right{
+   margin-left: 20px;
+ }
+ #mint-domain-text {
+   margin-top: 15px;
+   font-size: small;
+ }
+
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

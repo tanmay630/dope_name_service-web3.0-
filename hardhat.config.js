@@ -21,7 +21,7 @@ module.exports = {
   networks: {
 		mumbai: {
       url: "https://polygon-mumbai.g.alchemy.com/v2/Pi85q_HFPxv0Fpq0bvnYpK71TXFMAmCB",
-      accounts: [""],
+      accounts: ["65179b0ee32530f0e97eb9147ce7d0d26e9932f8afc3cefc692785c9e067d2fc"],
 		}
   }
 
