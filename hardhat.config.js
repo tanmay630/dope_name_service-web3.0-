@@ -1,4 +1,10 @@
+import dotenv from "dotenv";
+
+dotenv.config();
 require("@nomiclabs/hardhat-waffle");
+
+
+
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -20,8 +26,8 @@ module.exports = {
   solidity: "0.8.4",
   networks: {
 		mumbai: {
-      url: "https://polygon-mumbai.g.alchemy.com/v2/Pi85q_HFPxv0Fpq0bvnYpK71TXFMAmCB",
-      accounts: ["65179b0ee32530f0e97eb9147ce7d0d26e9932f8afc3cefc692785c9e067d2fc"],
+      url: process.env.ALCHEMY_API_URL,
+      accounts: [process.env.PRIVATE_KEY],
 		}
   }
 

@@ -5,6 +5,7 @@ import polygonLogo from './assets/matic-logo.png';
 import TwitterLogo from './assets/twitter-app.png';
 import InstaLogo from './assets/ig-instagram.png';
 import LinkedinLogo from './assets/linkedin-app.png';
+import Chekclogo from './assets/check.png';
 import ethLogo from './assets/eth-logo.png';
 import {ethers} from "ethers";
 import contractAbi from './utils/contractABI.json';
@@ -354,6 +355,38 @@ const App = () => {
   }
 
 
+    const mainContent = () => {
+
+      return (
+             
+    <main className='main-content'>
+
+       <div className='main-content-container bg-blur'>        
+        {currentAccount && renderInputForm()}
+       </div>  
+       
+       <div className='mint-content'>
+         {mints && renderMints()}
+       </div>
+      
+    </main>
+
+      )
+    }
+
+
+
+  const welcomeContent = () => {
+      return (
+        <div className="middle-content">
+            <h1>Welcome to <span>Dope</span> Domains</h1>    
+            <img src={Chekclogo} className="welcome-image"/>
+        </div>
+      )
+  }
+
+
+
   const editRecord = (name) => {
     console.log("Editing record for", name);
     setEditing(true);
@@ -367,19 +400,10 @@ const App = () => {
            <p className='logo-text'><span>Dope</span>Domains</p>
             {renderNotConnectedContainer()}
          </nav>
-       <main className='main-content'>
 
-        <div className='main-content-container bg-blur'>
-            
-         {currentAccount && renderInputForm()}
+    
+           {currentAccount ? mainContent(): welcomeContent()}
 
-       </div>  
-        
-        <div>
-          {mints && renderMints()}
-        </div>
-
-       </main>
           
         <div className='icons-wrapper'>
         
