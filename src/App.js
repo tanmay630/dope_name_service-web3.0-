@@ -407,9 +407,9 @@ const App = () => {
           
         <div className='icons-wrapper'>
         
-            <a className='footer-content1' href={TWITTER_LINK}><i className='ri-instagram-line icon'></i></a> 
+            <a className='footer-content1' href={Insta_Link}><i className='ri-instagram-line icon'></i></a> 
             <a  className='footer-content2'
-                    href={Insta_Link}><i className='ri-facebook-circle-line icon'></i></a>  
+                    href={Insta_Link}><i className='ri-twitter-line icon'></i></a>  
             <a className='footer-content3' href={LinkedIn_Link}><i className='ri-linkedin-box-line icon'></i></a>     
   
         </div>   

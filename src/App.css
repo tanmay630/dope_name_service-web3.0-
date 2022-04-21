@@ -104,7 +104,7 @@ span{
   /* This is the first item so no animation delay needed.*/
 }
 
-.ri-facebook-circle-line{
+.ri-twitter-line{
   color: #1877f2;
   animation-delay: 1s; /* Adds a animation delay of 1 seconds.*/
 }
@@ -541,15 +541,23 @@ h1{
    justify-content: center;
    align-items: center;
    flex-direction: column;
+ 
+   
  }
  h1 {
-   font-size: 7.7vh;
-   margin-left: 17px;
+   display: flex;
+   justify-content: center;
+   font-size: 56px;
+   margin-top: 22px;
+  
    
  }
  .welcome-image {
+
    width: 220px;
    height: 150px;
+   margin-top: -112px;
+  
  }
 
 
