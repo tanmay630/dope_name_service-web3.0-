@@ -409,7 +409,7 @@ const App = () => {
         
             <a className='footer-content1' href={Insta_Link}><i className='ri-instagram-line icon'></i></a> 
             <a  className='footer-content2'
-                    href={Insta_Link}><i className='ri-twitter-line icon'></i></a>  
+                    href={TWITTER_LINK}><i className='ri-twitter-line icon'></i></a>  
             <a className='footer-content3' href={LinkedIn_Link}><i className='ri-linkedin-box-line icon'></i></a>     
   
         </div>   
