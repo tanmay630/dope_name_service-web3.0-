@@ -508,8 +508,9 @@ h1{
 
  .main-content-container {
    width: 296px;
-   height: 250px;
+   height: 650px;
    padding: 25px;
+   
  
  }
 
@@ -566,7 +567,8 @@ h1{
 }
 
 .subtitle {
-  font-size: medium;
+  font-size: small;
+  margin-top: 50px;
 }
 
 .mint-item {
@@ -577,14 +579,17 @@ h1{
   padding: 10px 15px;
   border-radius: 5px;
   margin: 5px 15px;
-  font-size: 11px;
+  font-size: 8px;
   background-color: #c4b7fa;
   color: black;
   min-width: 90px;
   max-width: fit-content;
   box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.2);
+ 
 
 }
+
+
 
 
 .mint-list {
@@ -617,7 +622,29 @@ input::placeholder {
 }
 
 
+@media (max-width: 400px) {
 
+  .main-content-container {
+    width: 300px;
+    height: 280px;
+    margin-top: -20px;
+  
+  }
+
+
+  .mint-container {
+
+    height: 60px;
+ 
+  }
+
+   
+
+
+
+
+
+}
 
 
 
